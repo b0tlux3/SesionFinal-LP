@@ -5,6 +5,8 @@
  */
 package sesion05.jframe.principal;
 
+import sesion05.jframe.forms.jFormDetalle;
+import sesion05.jframe.forms.jFormProductos;
 import sesion05.jframe.forms.jFormUsuario;
 
 /**
@@ -30,9 +32,9 @@ public class menuPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btnTbUsuario = new javax.swing.JButton();
+        btnTbProductos = new javax.swing.JButton();
+        btnTbDetalle = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
@@ -44,25 +46,35 @@ public class menuPrincipal extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));
 
-        jButton1.setBackground(new java.awt.Color(204, 255, 204));
-        jButton1.setFont(new java.awt.Font("Lucida Console", 0, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(51, 51, 51));
-        jButton1.setText("TABLA USUARIOS");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnTbUsuario.setBackground(new java.awt.Color(204, 255, 204));
+        btnTbUsuario.setFont(new java.awt.Font("Lucida Console", 0, 18)); // NOI18N
+        btnTbUsuario.setForeground(new java.awt.Color(51, 51, 51));
+        btnTbUsuario.setText("TABLA USUARIOS");
+        btnTbUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnTbUsuarioActionPerformed(evt);
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(204, 255, 204));
-        jButton2.setFont(new java.awt.Font("Lucida Console", 0, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(51, 51, 51));
-        jButton2.setText("TABLA PRODUCTOS");
+        btnTbProductos.setBackground(new java.awt.Color(204, 255, 204));
+        btnTbProductos.setFont(new java.awt.Font("Lucida Console", 0, 18)); // NOI18N
+        btnTbProductos.setForeground(new java.awt.Color(51, 51, 51));
+        btnTbProductos.setText("TABLA PRODUCTOS");
+        btnTbProductos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTbProductosActionPerformed(evt);
+            }
+        });
 
-        jButton4.setBackground(new java.awt.Color(204, 255, 204));
-        jButton4.setFont(new java.awt.Font("Lucida Console", 0, 18)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(51, 51, 51));
-        jButton4.setText("TABLA DETALLE");
+        btnTbDetalle.setBackground(new java.awt.Color(204, 255, 204));
+        btnTbDetalle.setFont(new java.awt.Font("Lucida Console", 0, 18)); // NOI18N
+        btnTbDetalle.setForeground(new java.awt.Color(51, 51, 51));
+        btnTbDetalle.setText("TABLA DETALLE");
+        btnTbDetalle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTbDetalleActionPerformed(evt);
+            }
+        });
 
         jButton5.setBackground(new java.awt.Color(255, 0, 51));
         jButton5.setFont(new java.awt.Font("Franklin Gothic Book", 0, 18)); // NOI18N
@@ -89,13 +101,13 @@ public class menuPrincipal extends javax.swing.JFrame {
                         .addGap(48, 48, 48)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnTbDetalle, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnTbUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(btnTbProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addGap(72, 72, 72)
                         .addComponent(jLabel1)))
@@ -108,12 +120,12 @@ public class menuPrincipal extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(56, 56, 56)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnTbUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnTbProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(45, 45, 45)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnTbDetalle, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(70, 70, 70)
                         .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -126,18 +138,33 @@ public class menuPrincipal extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnTbUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTbUsuarioActionPerformed
         // TODO add your handling code here:
         jFormUsuario jformUsuario = new jFormUsuario();
          dispose();  
             jformUsuario.setVisible(true);
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnTbUsuarioActionPerformed
 
     private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_jButton5MouseClicked
+
+    private void btnTbProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTbProductosActionPerformed
+        // TODO add your handling code here:
+        jFormProductos jformProducto = new jFormProductos();
+         dispose();  
+            jformProducto.setVisible(true);
+        
+    }//GEN-LAST:event_btnTbProductosActionPerformed
+
+    private void btnTbDetalleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTbDetalleActionPerformed
+        // TODO add your handling code here:
+        jFormDetalle jformDetalle = new jFormDetalle();
+         dispose();  
+            jformDetalle.setVisible(true);
+    }//GEN-LAST:event_btnTbDetalleActionPerformed
 
     /**
      * @param args the command line arguments
@@ -175,9 +202,9 @@ public class menuPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton btnTbDetalle;
+    private javax.swing.JButton btnTbProductos;
+    private javax.swing.JButton btnTbUsuario;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
