@@ -14,8 +14,8 @@ import java.sql.DriverManager;
  */
 public class Conexion {
      String url ="jdbc:oracle:thin:@localhost:1521:XE";
-    String user="hr";
-    String clave="hr";
+    String user="cvidal";
+    String clave="cvidal";
     
     public Connection getConnection(){
     Connection conn = null;
