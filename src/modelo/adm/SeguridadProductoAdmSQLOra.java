@@ -17,14 +17,14 @@ import modelo.Producto;
  *
  * @author Usuario-Clone0
  */
-public class SeguridadProductoAdmSQLOra implements ISeguridadProductoAdm{
+public class SeguridadProductoAdmSQLOra implements ISeguridadProductoAdm {
 
     @Override
     public ArrayList<Producto> listarProducto() {
         ArrayList listaProductos = new ArrayList();
         Conexion conecta = new Conexion();
         Connection conn = conecta.getConnection();
-        
+
         try {
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery("select p.id_producto, p.descripcion, p.uni_medida, p.precio_costo, p.stock, p.nro_producto, e.extranjero from tb_producto p, tb_extranjero e where p.cod_extranjero=e.cod_extranjero and p.activo='1' order by p.descripcion");
@@ -39,14 +39,14 @@ public class SeguridadProductoAdmSQLOra implements ISeguridadProductoAdm{
                 prod.setExtraProducto(rs.getString(7));
                 listaProductos.add(prod);
             }
-            
+
             rs.close();
             st.close();
             conn.close();
         } catch (Exception e) {
             System.out.println("No se pudo obtener los registros de la base de datos. Mensaje: " + e.getMessage());
         }
-        
+
         return listaProductos;
     }
 
@@ -56,9 +56,9 @@ public class SeguridadProductoAdmSQLOra implements ISeguridadProductoAdm{
         Connection conn = conecta.getConnection();
 
         Producto proda = new Producto();
-        
+
         try {
-             String idProducto = prod.getIdProducto();
+            String idProducto = prod.getIdProducto();
             String descProducto = prod.getDescProducto();
             String uniProducto = prod.getUniProducto();
             String preProducto = prod.getPreProducto();
@@ -80,11 +80,11 @@ public class SeguridadProductoAdmSQLOra implements ISeguridadProductoAdm{
             rs.close();
             pst.close();
             conn.close();
-            
+
         } catch (Exception e) {
             System.out.println("Se tiene el siguiente error: " + e.getMessage());
         }
-        
+
     }
 
     @Override
@@ -93,7 +93,7 @@ public class SeguridadProductoAdmSQLOra implements ISeguridadProductoAdm{
         Connection conn = conecta.getConnection();
 
         Producto proda = new Producto();
-        
+
         try {
             String idProducto = prod.getIdProducto();
             String descProducto = prod.getDescProducto();
@@ -117,7 +117,7 @@ public class SeguridadProductoAdmSQLOra implements ISeguridadProductoAdm{
         } catch (Exception e) {
             System.out.println("Se tiene el siguiente error: " + e.getMessage());
         }
-        
+
     }
 
     @Override
@@ -125,7 +125,7 @@ public class SeguridadProductoAdmSQLOra implements ISeguridadProductoAdm{
         Conexion conecta = new Conexion();
         Connection conn = conecta.getConnection();
         Producto proda = new Producto();
-        
+
         try {
             String idProducto = prod.getIdProducto();
             PreparedStatement pst = conn.prepareStatement("update tb_producto set activo=? where id_producto=?");
@@ -135,10 +135,27 @@ public class SeguridadProductoAdmSQLOra implements ISeguridadProductoAdm{
             pst.executeUpdate();
             pst.close();
             conn.close();
-            
+
         } catch (Exception e) {
             System.out.println("Se tiene el siguiente error: " + e.getMessage());
         }
     }
-    
+
+    @Override
+    public ArrayList<Producto> ventaProducto(Producto prod) {
+
+        ArrayList ventaProd = new ArrayList();
+
+        String idProducto = prod.getIdProducto();
+        String descProducto = prod.getDescProducto();
+        String uniProducto = prod.getUniProducto();
+        String preProducto = prod.getPreProducto();
+        String stockProducto = prod.getStockProducto();
+        String nroProducto = prod.getNroProducto();
+        String extraProducto = prod.getExtraProducto();
+
+        return ventaProd;
+
+    }
+
 }

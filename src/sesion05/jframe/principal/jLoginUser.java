@@ -90,7 +90,7 @@ public class jLoginUser extends javax.swing.JFrame {
         txtusuario.setBackground(new java.awt.Color(204, 204, 204));
         txtusuario.setForeground(new java.awt.Color(0, 0, 0));
         txtusuario.setToolTipText("Ingrese usuario...");
-        txtusuario.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", 0, 0, new java.awt.Font("Dialog", 0, 11), new java.awt.Color(153, 153, 153))); // NOI18N
+        txtusuario.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 11), new java.awt.Color(153, 153, 153))); // NOI18N
         txtusuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtusuarioActionPerformed(evt);
@@ -121,7 +121,7 @@ public class jLoginUser extends javax.swing.JFrame {
 
         txtpassword.setBackground(new java.awt.Color(204, 204, 204));
         txtpassword.setForeground(new java.awt.Color(0, 0, 0));
-        txtpassword.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", 0, 0, new java.awt.Font("Dialog", 0, 11), new java.awt.Color(102, 102, 102))); // NOI18N
+        txtpassword.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 11), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel1.add(txtpassword);
         txtpassword.setBounds(400, 310, 310, 40);
 
@@ -141,7 +141,7 @@ public class jLoginUser extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("MICROTEL.COM");
+        jLabel8.setText("LENGUAJES DE PROGRAMACION");
 
         jLabel6.setBackground(new java.awt.Color(0, 0, 0));
         jLabel6.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
@@ -269,8 +269,9 @@ public class jLoginUser extends javax.swing.JFrame {
 
         if (usuObj != null) {
             System.out.println("Bienvenido Usuario: " + id);
-            menuPrincipal menuPrin1 = new menuPrincipal();
+            menuPrincipal2 menuPrin1 = new menuPrincipal2();
             dispose();  
+            menuPrin1.setIdUsuario(id);
             menuPrin1.setVisible(true);
 
         } else {

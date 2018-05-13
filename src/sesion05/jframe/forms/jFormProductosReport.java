@@ -5,27 +5,56 @@
  */
 package sesion05.jframe.forms;
 
+import java.util.ArrayList;
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
+import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
+import modelo.Producto;
+import modelo.adm.ISeguridadProductoAdm;
+import modelo.adm.SeguridadProductoAdmSQLOra;
 import sesion05.jframe.principal.menuPrincipal2;
 
 /**
  *
  * @author Admin
  */
-public class jFormProductosUser extends javax.swing.JFrame {
+public class jFormProductosReport extends javax.swing.JFrame {
     
      DefaultTableModel modelo3 = new DefaultTableModel(null, new String[]{
-        "Codigo", "Descripcion",
-        "Precio", "Stock", "Categoria"});
+        "Id", "Descripcion",
+        "Uni", "Precio", "Stock", "NroProd","Extranjero"});
     boolean estado_txtFields = true;
 
+    
+    
+    
     /**
      * Creates new form jFormProductosUser
      */
-    public jFormProductosUser() {
+    public jFormProductosReport() {
         initComponents();
+        
+        ISeguridadProductoAdm seguProdAdm = new SeguridadProductoAdmSQLOra();
+    
+    ArrayList<Producto> listaProductos = seguProdAdm.listarProducto();
+
+                modelo3.setRowCount(0);
+
+                for (int i = 0; i < listaProductos.size(); i++) {
+                    modelo3.addRow(new Object[]{
+                        listaProductos.get(i).getIdProducto(),
+                        listaProductos.get(i).getDescProducto(),
+                        listaProductos.get(i).getUniProducto(),
+                        listaProductos.get(i).getPreProducto(),
+                        listaProductos.get(i).getStockProducto(),
+                        listaProductos.get(i).getNroProducto(),
+                        listaProductos.get(i).getExtraProducto()
+                    });
+
+                }
+
+                ListSelectionModel model = jTable2.getSelectionModel();
     }
 
     /**
@@ -50,12 +79,13 @@ public class jFormProductosUser extends javax.swing.JFrame {
         ;
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jButton2.setBackground(new java.awt.Color(0, 102, 255));
         jButton2.setFont(new java.awt.Font("Gisha", 0, 14)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Menu Principal");
-        jButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        jButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -66,7 +96,7 @@ public class jFormProductosUser extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Lucida Console", 0, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("X");
-        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton1MouseClicked(evt);
@@ -130,6 +160,7 @@ public class jFormProductosUser extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -171,20 +202,21 @@ public class jFormProductosUser extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(jFormProductosUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(jFormProductosReport.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(jFormProductosUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(jFormProductosReport.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(jFormProductosUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(jFormProductosReport.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(jFormProductosUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(jFormProductosReport.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new jFormProductosUser().setVisible(true);
+                new jFormProductosReport().setVisible(true);
             }
         });
     }

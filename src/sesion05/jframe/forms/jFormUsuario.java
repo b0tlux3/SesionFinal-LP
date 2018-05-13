@@ -18,7 +18,7 @@ import javax.swing.table.DefaultTableModel;
 import modelo.Usuario;
 import modelo.adm.ISeguridadAdm;
 import modelo.adm.SeguridadAdmSQLOra;
-import sesion05.jframe.principal.menuPrincipal;
+import sesion05.jframe.principal.menuPrincipal2;
 
 /**
  *
@@ -638,7 +638,7 @@ jTable1.putClientProperty("Terminate edit", Boolean.TRUE);
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        menuPrincipal menuPrin1 = new menuPrincipal();
+        menuPrincipal2 menuPrin1 = new menuPrincipal2();
         dispose();
         menuPrin1.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed

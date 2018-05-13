@@ -21,7 +21,7 @@ import modelo.adm.ISeguridadAdm;
 import modelo.adm.ISeguridadProductoAdm;
 import modelo.adm.SeguridadAdmSQLOra;
 import modelo.adm.SeguridadProductoAdmSQLOra;
-import sesion05.jframe.principal.menuPrincipal;
+import sesion05.jframe.principal.menuPrincipal2;
 
 /**
  *
@@ -661,7 +661,7 @@ public class jFormProductos extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        menuPrincipal menuPrin1 = new menuPrincipal();
+        menuPrincipal2 menuPrin1 = new menuPrincipal2();
         dispose();
         menuPrin1.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed

@@ -23,6 +23,8 @@ public interface ISeguridadProductoAdm {
         public void updateProducto(Producto prod);
         
         public void deleteProducto(Producto prod);
+        
+        public ArrayList ventaProducto(Producto prod);
 
     
 }
