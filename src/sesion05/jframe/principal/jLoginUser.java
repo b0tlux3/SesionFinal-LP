@@ -5,7 +5,6 @@
  */
 package sesion05.jframe.principal;
 
-import dao.UsuarioAdm;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import modelo.Usuario;
